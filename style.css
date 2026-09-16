@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ee;
+    color: #171717;
+}
+
+
+/* 상단 메뉴 */
+
+.header {
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #171717;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* 메인 화면 */
+
+.hero {
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+
+/* 직무명 */
+
+.job {
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+
+    color: #666666;
+}
+
+
+/* 메인 제목 */
+
+.hero h1 {
+    font-size: 72px;
+    line-height: 1.15;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 35px;
+}
+
+
+/* 설명 */
+
+.description {
+    font-size: 19px;
+    line-height: 1.8;
+
+    color: #555555;
+
+    margin-bottom: 45px;
+}
+
+
+/* 버튼 영역 */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* 공통 버튼 */
+
+.buttons a {
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-radius: 6px;
+}
+
+
+/* 검정 버튼 */
+
+.primary-button {
+    background-color: #171717;
+    color: white;
+}
+
+
+/* 테두리 버튼 */
+
+.secondary-button {
+    border: 1px solid #171717;
+    color: #171717;
+}
+
+
+/* 마우스를 올렸을 때 */
+
+.nav a:hover {
+    opacity: 0.5;
+}
+
+.buttons a:hover {
+    opacity: 0.7;
+}
+
+
+/* 모바일 화면 */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 5%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .description {
+        font-size: 17px;
+    }
+
+}
