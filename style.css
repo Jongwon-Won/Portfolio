@@ -303,3 +303,207 @@ body {
     }
 
 }
+
+/* =========================
+   주요 프로젝트
+========================= */
+
+.projects {
+    background-color: #f5f3ee;
+    color: #171717;
+
+    padding: 130px 8%;
+}
+
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* 상단 영문 라벨 */
+
+.projects-label {
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #777777;
+
+    margin-bottom: 20px;
+}
+
+
+/* 프로젝트 제목 */
+
+.projects h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+/* 프로젝트 소개 */
+
+.projects-intro {
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #666666;
+
+    margin-bottom: 70px;
+}
+
+
+/* 프로젝트 카드 전체 배치 */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* 개별 프로젝트 카드 */
+
+.project-card {
+    min-height: 480px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dedbd4;
+    border-radius: 16px;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* 카드 번호 */
+
+.project-number {
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #999999;
+
+    letter-spacing: 2px;
+}
+
+
+/* 프로젝트 종류 */
+
+.project-category {
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #888888;
+
+    margin-bottom: 18px;
+}
+
+
+/* 프로젝트명 */
+
+.project-card h3 {
+    font-size: 34px;
+    line-height: 1.25;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 25px;
+}
+
+
+/* 프로젝트 설명 */
+
+.project-description {
+    max-width: 500px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #666666;
+
+    margin-bottom: 35px;
+}
+
+
+/* 기술 태그 영역 */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+/* 개별 기술 태그 */
+
+.project-tags span {
+    padding: 8px 12px;
+
+    border: 1px solid #dedbd4;
+    border-radius: 100px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    color: #555555;
+}
+
+
+/* 마우스를 카드에 올렸을 때 */
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+
+/* 모바일 */
+
+@media (max-width: 768px) {
+
+    .projects {
+        padding: 90px 5%;
+    }
+
+    .projects h2 {
+        font-size: 38px;
+    }
+
+    .projects-intro {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 420px;
+        padding: 30px;
+    }
+
+    .project-card h3 {
+        font-size: 28px;
+    }
+
+}
