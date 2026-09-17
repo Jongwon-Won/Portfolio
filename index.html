@@ -18,11 +18,19 @@
             JONGWON PORTFOLIO
         </div>
 
-        <nav class="nav">
-            <a href="#">ABOUT</a>
-            <a href="#">PROJECTS</a>
-            <a href="#">CAREER</a>
+        <nav class="nav" id="nav">
+
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#career">CAREER</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#contact">CONTACT</a>
+
         </nav>
+
+        <button class="menu-button" id="menu-button" aria-label="메뉴 열기">
+            ☰
+        </button>
 
     </header>
 
@@ -48,11 +56,11 @@
 
             <div class="buttons">
 
-                <a href="#" class="primary-button">
+                <a href="#projects" class="primary-button">
                     프로젝트 보기
                 </a>
 
-                <a href="#" class="secondary-button">
+                <a href="#career" class="secondary-button">
                     경력 보기
                 </a>
 
@@ -62,6 +70,40 @@
 
     </main>
 
+        <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <p class="about-label">
+                ABOUT
+            </p>
+
+            <h2>
+                반복 업무를 넘어,<br>
+                업무 프로세스를 자동화합니다.
+            </h2>
+
+            <div class="about-content">
+
+                <p>
+                    RPA를 기반으로 반복 업무를 자동화하고,
+                    업무 시스템과 데이터를 연결하여
+                    실제 업무 프로세스를 개선해왔습니다.
+                </p>
+
+                <p>
+                    단순히 정해진 작업을 자동화하는 것에 그치지 않고,
+                    업무를 분석하고 자동화 가능한 영역을 발굴하여
+                    개발부터 운영까지 연결하는 업무자동화를 지향합니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <section class="impact">
 
@@ -107,7 +149,7 @@
 
     </section>
 
-        <section class="projects">
+        <section class="projects" id="projects">
 
         <div class="projects-container">
 
@@ -130,7 +172,7 @@
 
                 <!-- 프로젝트 01 -->
 
-                <article class="project-card" id="project-rpa">
+                <article class="project-card" id="project-rpa" data-project="1">
 
                     <div class="project-number">
                         01
@@ -165,7 +207,7 @@
 
                 <!-- 프로젝트 02 -->
 
-                <article class="project-card">
+                <article class="project-card" data-project="2">
 
                     <div class="project-number">
                         02
@@ -201,7 +243,7 @@
 
                 <!-- 프로젝트 03 -->
 
-                <article class="project-card">
+                <article class="project-card" data-project="3">
 
                     <div class="project-number">
                         03
@@ -237,7 +279,7 @@
 
                 <!-- 프로젝트 04 -->
 
-                <article class="project-card">
+                <article class="project-card" data-project="4">
 
                     <div class="project-number">
                         04
@@ -277,6 +319,220 @@
 
     </section>
 
+        <!-- 경력 -->
+
+    <section class="career" id="career">
+
+        <div class="career-container">
+
+            <p class="career-label">
+                CAREER
+            </p>
+
+            <h2>
+                경력
+            </h2>
+
+            <div class="career-list">
+
+                <div class="career-item">
+
+                    <div class="career-period">
+                        2019 — PRESENT
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            SGC솔루션
+                        </h3>
+
+                        <p class="career-position">
+                            업무자동화 엔지니어
+                        </p>
+
+                        <p class="career-description">
+                            RPA 개발 및 운영을 중심으로 업무 프로세스 자동화와
+                            시스템 연계 업무를 수행하고 있습니다.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <div class="skills-container">
+
+        <p class="skills-label">
+            SKILLS
+        </p>
+
+        <h2>
+            업무자동화를 위한<br>
+            기술과 도구
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-item">
+
+                <p class="skill-number">
+                    01
+                </p>
+
+                <h3>
+                    RPA
+                </h3>
+
+                <p class="skill-description">
+                    반복 업무의 분석부터 개발, 배포,
+                    운영 및 유지보수까지 수행합니다.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Brity RPA</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <p class="skill-number">
+                    02
+                </p>
+
+                <h3>
+                    System Integration
+                </h3>
+
+                <p class="skill-description">
+                    다양한 업무 시스템과 데이터를 연결하여
+                    자동화 범위를 확장합니다.
+                </p>
+
+                <div class="skill-tags">
+                    <span>ERP</span>
+                    <span>그룹웨어</span>
+                    <span>CRM</span>
+                    <span>WMS</span>
+                    <span>REST API</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <p class="skill-number">
+                    03
+                </p>
+
+                <h3>
+                    Data Processing
+                </h3>
+
+                <p class="skill-description">
+                    업무 데이터를 수집하고 가공하여
+                    자동화 프로세스에서 활용합니다.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Excel</span>
+                    <span>SQL</span>
+                    <span>OCR</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <p class="skill-number">
+                    04
+                </p>
+
+                <h3>
+                    Development & Operation
+                </h3>
+
+                <p class="skill-description">
+                    자동화 개발 환경과 운영 인프라를 관리하고
+                    안정적인 서비스 운영을 지원합니다.
+                </p>
+
+                <div class="skill-tags">
+                    <span>VS Code</span>
+                    <span>Git</span>
+                    <span>VMware</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-container">
+
+        <p class="contact-label">
+            CONTACT
+        </p>
+
+        <h2>
+            함께 더 나은 업무 프로세스를<br>
+            만들어가고 싶습니다.
+        </h2>
+
+        <p class="contact-description">
+            업무자동화 엔지니어 원종원의 포트폴리오입니다.<br>
+            더 자세한 경력과 프로젝트 내용은 아래 연락처를 통해 확인하실 수 있습니다.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="#" id="email-link">
+                wjw0927@hanmail.net
+            </a>
+
+            <a href="https://github.com/Jongwon-Won" target="_blank">
+                github.com/Jongwon-Won
+            </a>
+
+        </div>
+
+        <div class="contact-footer">
+
+            <p>
+                JONGWON PORTFOLIO
+            </p>
+
+            <p>
+                © 2026
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
     <!-- 프로젝트 상세 모달 -->
 
     <div class="project-modal" id="project-modal">
@@ -287,11 +543,11 @@
                 ×
             </button>
 
-            <p class="modal-number">
+            <p class="modal-number" id="modal-number">
                 PROJECT 01
             </p>
 
-            <h2>
+            <h2 id="modal-title">
                 전사 RPA 업무자동화<br>
                 운영 체계 구축
             </h2>
@@ -306,7 +562,7 @@
                     프로젝트 배경
                 </h3>
 
-                <p>
+                <p id="modal-background">
                     프로젝트 배경 내용을 작성할 영역입니다.
                 </p>
 
@@ -323,7 +579,7 @@
                     접근 및 해결 방법
                 </h3>
 
-                <p>
+                <p id="modal-approach">
                     프로젝트를 어떻게 진행하고 해결했는지 작성할 영역입니다.
                 </p>
 
@@ -340,7 +596,7 @@
                     담당 역할
                 </h3>
 
-                <p>
+                <p id="modal-role">
                     프로젝트에서 직접 담당한 역할을 작성할 영역입니다.
                 </p>
 
@@ -357,7 +613,7 @@
                     성과
                 </h3>
 
-                <p>
+                <p id="modal-result">
                     프로젝트를 통해 만들어낸 결과와 성과를 작성할 영역입니다.
                 </p>
 
@@ -366,6 +622,12 @@
         </div>
 
     </div>
+
+<!-- 맨 위로 이동 버튼 -->
+
+<button class="top-button" id="top-button" aria-label="맨 위로 이동">
+    ↑
+</button>
 
 <script src="script.js"></script>
 
