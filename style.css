@@ -175,3 +175,131 @@ body {
     }
 
 }
+
+/* =========================
+   성과 대시보드
+========================= */
+
+.impact {
+    background-color: #171717;
+    color: #ffffff;
+
+    padding: 120px 8%;
+}
+
+.impact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* 섹션 상단 영문 */
+
+.section-label {
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #999999;
+
+    margin-bottom: 20px;
+}
+
+
+/* 성과 영역 제목 */
+
+.impact h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+
+    margin-bottom: 60px;
+}
+
+
+/* 카드 4개 배치 */
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* 개별 카드 */
+
+.impact-card {
+    min-height: 220px;
+
+    padding: 35px;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+
+/* 숫자 */
+
+.impact-card strong {
+    font-size: 52px;
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+/* 단위 */
+
+.impact-card span {
+    font-size: 15px;
+
+    color: #aaaaaa;
+
+    margin-left: 8px;
+
+    align-self: flex-end;
+
+    margin-bottom: 5px;
+}
+
+
+/* 카드 설명 */
+
+.impact-card p {
+    width: 100%;
+
+    font-size: 15px;
+
+    color: #aaaaaa;
+
+    margin-top: 22px;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 768px) {
+
+    .impact {
+        padding: 80px 5%;
+    }
+
+    .impact h2 {
+        font-size: 34px;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-card {
+        min-height: 180px;
+    }
+
+}
