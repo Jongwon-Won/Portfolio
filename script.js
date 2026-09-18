@@ -1,3 +1,23 @@
+// =========================
+// 페이지 진입 시 항상 맨 위에서 시작
+// =========================
+
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", function () {
+
+    document.documentElement.style.scrollBehavior = "auto";
+
+    window.scrollTo(0, 0);
+
+    requestAnimationFrame(function () {
+        document.documentElement.style.scrollBehavior = "";
+    });
+
+});
+
 const projectCards = document.querySelectorAll(".project-card");
 
 const projectModal = document.getElementById("project-modal");
@@ -405,13 +425,39 @@ navLinks.forEach(function (link) {
 
 const emailLink = document.getElementById("email-link");
 
-
 emailLink.addEventListener("click", function (event) {
 
     event.preventDefault();
 
-    navigator.clipboard.writeText("wjw0927@hanmail.net");
+    navigator.clipboard.writeText(
+        emailLink.textContent.trim()
+    );
 
     alert("이메일 주소가 복사되었습니다.");
 
 });
+
+
+// =========================
+// 연락처 복사
+// =========================
+
+const phoneLink = document.querySelector(
+    '.contact-links a[href^="tel:"]'
+);
+
+if (phoneLink) {
+
+    phoneLink.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        navigator.clipboard.writeText(
+            phoneLink.textContent.trim()
+        );
+
+        alert("연락처가 복사되었습니다.");
+
+    });
+
+}
