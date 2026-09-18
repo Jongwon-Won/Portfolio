@@ -420,6 +420,157 @@ body {
 }
 
 /* =========================
+   AUTOMATION EXPERIENCE
+========================= */
+
+.automation-experience {
+    background-color: #f5f3ee;
+    color: #171717;
+
+    padding: 130px 8%;
+}
+
+.experience-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* 자동화 경험 소개 문장 */
+
+.experience-header {
+    margin-bottom: 70px;
+}
+
+.experience-header h2 {
+    width: 100%;
+    max-width: 1250px;
+
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.55;
+
+    letter-spacing: -1.2px;
+
+    word-break: keep-all;
+}
+
+
+/* 자동화 업무 목록 */
+
+.experience-list {
+    border-top: 1px solid #d5d2cb;
+}
+
+
+/* 개별 업무 */
+
+.experience-item {
+    display: grid;
+
+    grid-template-columns: 30px 1fr;
+
+    align-items: center;
+
+    min-height: 92px;
+
+    padding: 20px 10px;
+
+    border-bottom: 1px solid #d5d2cb;
+
+    transition:
+        padding-left 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* 왼쪽 작은 점 */
+
+.experience-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: #171717;
+}
+
+
+/* 업무명 */
+
+.experience-item p {
+    font-size: 21px;
+    line-height: 1.5;
+
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+
+    word-break: keep-all;
+}
+
+
+/* 마우스를 올렸을 때 */
+
+.experience-item:hover {
+    padding-left: 20px;
+
+    background-color: #ebe8e1;
+}
+
+
+/* =========================
+   AUTOMATION EXPERIENCE
+   모바일
+========================= */
+
+@media (max-width: 768px) {
+
+    .automation-experience {
+        padding: 90px 5%;
+    }
+
+    .experience-header {
+        margin-bottom: 50px;
+    }
+
+    .experience-header h2 {
+        width: 100%;
+
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 1.55;
+
+        letter-spacing: -0.7px;
+
+        word-break: keep-all;
+    }
+
+    .experience-item {
+        grid-template-columns: 22px 1fr;
+
+        min-height: 80px;
+
+        padding: 18px 5px;
+    }
+
+    .experience-dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .experience-item p {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    .experience-item:hover {
+        padding-left: 5px;
+    }
+
+}
+
+/* =========================
    주요 프로젝트
 ========================= */
 
@@ -673,20 +824,30 @@ body {
 /* 닫기 버튼 */
 
 .modal-close {
-    position: absolute;
+    position: fixed;
 
-    top: 25px;
+    top: 30px;
     right: 30px;
 
-    border: none;
-    background: none;
+    width: 48px;
+    height: 48px;
 
-    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #f5f3ee;
+    color: #171717;
+
+    font-size: 28px;
     line-height: 1;
 
     cursor: pointer;
 
-    color: #171717;
+    z-index: 1100;
 }
 
 
@@ -1200,4 +1361,70 @@ body {
     color: #f5f3ee;
     border-color: #171717;
     transform: translateY(-3px);
+}
+
+/* 프로젝트 모달 밝기 변화 효과 */
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.project-modal.modal-fade-in {
+    animation: modalFadeIn 0.35s ease-out;
+}
+
+#modal-result {
+    white-space: pre-line;
+    line-height: 1.9;
+}
+
+
+/* =========================
+   프로젝트 실제 처리 영상
+========================= */
+
+.modal-video-section {
+    display: none;
+}
+
+.project-video-wrap {
+    width: 100%;
+    margin-top: 18px;
+    overflow: hidden;
+    border: 1px solid #d8d5ce;
+    border-radius: 12px;
+    background-color: #111111;
+}
+
+#modal-video {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    background-color: #111111;
+    cursor: pointer;
+}
+
+.video-guide {
+    margin-top: 12px;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+}
+
+@media (max-width: 768px) {
+
+    .project-video-wrap {
+        border-radius: 8px;
+    }
+
+    #modal-video {
+        max-height: 360px;
+    }
+
 }
