@@ -82,11 +82,24 @@ body {
     display: flex;
     align-items: center;
 
-    padding: 0 8%;
+    padding: 60px 8%;
 }
 
 .hero-content {
-    max-width: 900px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.hero-copy {
+    min-width: 0;
 }
 
 
@@ -116,9 +129,35 @@ body {
 }
 
 /* 메인 제목을 PC / 모바일 모두 정확히 2줄로 유지 */
+
 .hero h1 span {
     display: block;
     white-space: nowrap;
+}
+
+
+/* 프로필 사진 */
+
+.hero-photo {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-photo img {
+    display: block;
+
+    width: 260px;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border: 1px solid #d5d2cb;
+    border-radius: 12px;
+
+    filter: grayscale(10%);
 }
 
 
@@ -133,13 +172,20 @@ body {
     margin-bottom: 45px;
 }
 
+.description-mobile {
+    display: none;
+}
+
 
 /* 버튼 영역 */
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 12px;
+
+    width: 100%;
     max-width: 420px;
 }
 
@@ -147,44 +193,36 @@ body {
 /* 공통 버튼 */
 
 .buttons a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     padding: 16px 28px;
 
+    border-radius: 6px;
+
     text-decoration: none;
+    text-align: center;
 
     font-size: 14px;
 
-    border-radius: 6px;
+    transition: opacity 0.3s ease;
 }
 
-
-/* 검정 버튼 */
-
-.primary-button {
-    background-color: #171717;
-    color: white;
-}
-
-
-/* 테두리 버튼 */
-
-.secondary-button {
-    border: 1px solid #171717;
-    color: #171717;
-    background-color: #f5f3ee;
-}
 
 /* 4개 버튼: 왼쪽 열은 검정, 오른쪽 열은 흰색 */
+
 .buttons a:nth-child(odd) {
     background-color: #171717;
     border: 1px solid #171717;
+
     color: #ffffff;
 }
 
 .buttons a:nth-child(even) {
     background-color: #f5f3ee;
     border: 1px solid #171717;
+
     color: #171717;
 }
 
@@ -194,6 +232,7 @@ body {
 .nav a:hover {
     background-color: #171717;
     border-color: #171717;
+
     color: #f5f3ee;
 }
 
@@ -216,6 +255,7 @@ body {
     cursor: pointer;
 }
 
+
 /* 모바일 화면 */
 
 @media (max-width: 768px) {
@@ -228,17 +268,22 @@ body {
         top: 0;
 
         background-color: #f5f3ee;
+
         z-index: 800;
     }
 
     .logo {
         font-size: 13px;
         font-weight: bold;
+
         letter-spacing: 1.5px;
+
         white-space: nowrap;
 
         color: inherit;
+
         text-decoration: none;
+
         cursor: pointer;
     }
 
@@ -287,37 +332,117 @@ body {
         padding: 10px 16px;
 
         background-color: #e9e4da;
+
         border: 1px solid #d3ccbf;
         border-radius: 100px;
 
         font-size: 9px;
+
         letter-spacing: 0.8px;
 
         text-align: center;
+
         white-space: nowrap;
     }
 
-
     .menu-button {
         display: block;
+
         margin-left: auto;
 
         font-size: 21px;
         line-height: 1;
     }
 
+
+    /* 모바일 HERO */
+
     .hero {
-        padding: 0 5%;
+        min-height: auto;
+
+        padding: 45px 5% 70px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 34px;
+    }
+
+    .hero-photo {
+        order: 1;
+
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+    .hero-photo img {
+        width: 125px;
+
+        border-radius: 10px;
+    }
+
+    .hero-copy {
+        order: 2;
+
+        width: 100%;
+    }
+
+    .job {
+        margin-bottom: 24px;
+
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
     }
 
     .hero h1 {
-        font-size: clamp(32px, 9vw, 36px);
-        line-height: 1.18;
+        margin-bottom: 30px;
+
+        font-size: clamp(31px, 8.5vw, 36px);
+        line-height: 1.17;
+
         letter-spacing: -1.5px;
     }
 
+    .hero h1 span {
+        display: block;
+
+        white-space: nowrap;
+    }
+
+    .description-pc {
+        display: none;
+    }
+
+    .description-mobile {
+        display: block;
+    }
+
     .description {
-        font-size: 17px;
+        margin-bottom: 38px;
+
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .buttons {
+        width: 100%;
+        max-width: none;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
+    .buttons a {
+        width: 100%;
+
+        padding: 16px 10px;
     }
 
 }
@@ -1041,6 +1166,7 @@ body {
 .career {
     background-color: #f5f3ee;
     color: #171717;
+
     padding: 130px 8%;
 }
 
@@ -1050,17 +1176,22 @@ body {
 }
 
 .career-label {
+    margin-bottom: 20px;
+
     font-size: 12px;
     font-weight: bold;
+
     letter-spacing: 3px;
-    color: #777;
-    margin-bottom: 20px;
+
+    color: #777777;
 }
 
 .career h2 {
-    font-size: 48px;
-    letter-spacing: -2px;
     margin-bottom: 70px;
+
+    font-size: 48px;
+
+    letter-spacing: -2px;
 }
 
 .career-list {
@@ -1070,35 +1201,97 @@ body {
 .career-item {
     display: grid;
     grid-template-columns: 30% 70%;
+
     padding: 45px 0;
+
     border-bottom: 1px solid #d5d2cb;
 }
 
 .career-period {
+    padding-top: 6px;
+
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 1px;
-    color: #888;
+
+    color: #888888;
+}
+
+.career-info {
+    min-width: 0;
 }
 
 .career-info h3 {
-    font-size: 30px;
-    letter-spacing: -1px;
     margin-bottom: 10px;
+
+    font-size: 30px;
+
+    letter-spacing: -1px;
 }
 
 .career-position {
+    margin-bottom: 20px;
+
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 
 .career-description {
     max-width: 650px;
+
     font-size: 16px;
     line-height: 1.8;
-    color: #666;
+
+    color: #666666;
 }
+
+
+/* 경력 상세 */
+
+.career-detail {
+    margin-top: 45px;
+
+    border-top: 1px solid #d5d2cb;
+}
+
+.career-detail-item {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #d5d2cb;
+}
+
+.career-detail-title {
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: #777777;
+}
+
+.career-detail-item > p:not(.career-detail-title),
+.career-education p {
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #555555;
+}
+
+.career-education {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* CAREER 모바일 */
 
 @media (max-width: 768px) {
 
@@ -1107,13 +1300,16 @@ body {
     }
 
     .career h2 {
-        font-size: 38px;
         margin-bottom: 50px;
+
+        font-size: 38px;
     }
 
     .career-item {
         grid-template-columns: 1fr;
+
         gap: 20px;
+
         padding: 35px 0;
     }
 
@@ -1121,7 +1317,30 @@ body {
         font-size: 26px;
     }
 
+    .career-detail {
+        margin-top: 35px;
+    }
+
+    .career-detail-item {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        padding: 22px 0;
+    }
+
+    .career-detail-title {
+        font-size: 11px;
+    }
+
+    .career-detail-item > p:not(.career-detail-title),
+    .career-education p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
 }
+
 
 /* SKILLS */
 

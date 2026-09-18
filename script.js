@@ -18,37 +18,111 @@ window.addEventListener("pageshow", function () {
 
 });
 
-const projectCards = document.querySelectorAll(".project-card");
-
-const projectModal = document.getElementById("project-modal");
-
-const modalClose = document.querySelector(".modal-close");
-
-const modalNumber = document.getElementById("modal-number");
-
-const modalTitle = document.getElementById("modal-title");
-
-const modalBackground = document.getElementById("modal-background");
-
-const modalApproach = document.getElementById("modal-approach");
-
-const modalRole = document.getElementById("modal-role");
-
-const modalResult = document.getElementById("modal-result");
 
 
-// 프로젝트 영상 관련 요소
+// =========================
+// 경력 기간 자동 계산
+// =========================
 
-const modalVideoSection = document.getElementById("modal-video-section");
+const careerPeriod = document.querySelector(".career-period");
 
-const modalVideo = document.getElementById("modal-video");
+if (careerPeriod) {
+
+    const startYear = 2019;
+    const startMonth = 7;
+    const startDay = 8;
+
+    const today = new Date();
+
+    let years = today.getFullYear() - startYear;
+
+    let months =
+        (today.getMonth() + 1) - startMonth;
 
 
+    // 아직 이번 달의 입사일(8일)이 지나지 않았으면
+    // 한 달을 차감
+    if (today.getDate() < startDay) {
+        months--;
+    }
+
+
+    // 월 차이가 음수일 경우
+    if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+    }
+
+
+    careerPeriod.textContent =
+        "2019.07.08 — 현재 (" +
+        years +
+        "년 " +
+        months +
+        "개월)";
+
+}
+
+
+
+// =========================
+// 프로젝트 상세 모달
+// =========================
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+const projectModal =
+    document.getElementById("project-modal");
+
+const modalClose =
+    document.querySelector(".modal-close");
+
+const modalNumber =
+    document.getElementById("modal-number");
+
+const modalTitle =
+    document.getElementById("modal-title");
+
+const modalBackground =
+    document.getElementById("modal-background");
+
+const modalApproach =
+    document.getElementById("modal-approach");
+
+const modalRole =
+    document.getElementById("modal-role");
+
+const modalResult =
+    document.getElementById("modal-result");
+
+
+
+// =========================
+// 프로젝트 영상
+// =========================
+
+const modalVideoSection =
+    document.getElementById("modal-video-section");
+
+const modalVideo =
+    document.getElementById("modal-video");
+
+
+
+// =========================
+// 프로젝트 데이터
+// =========================
 
 const projectData = {
 
     1: {
-        title: "구매 발주 프로세스 자동화",
+
+        title:
+            "구매 발주 프로세스 자동화",
 
         background:
             "실시간으로 접수되는 구매 신청에 대해 내부 결재, ERP 발주 처리, 거래처 발주서 발송 및 발주 현황 보고까지 여러 단계의 반복 업무가 발생하고 있었습니다.",
@@ -64,11 +138,14 @@ const projectData = {
 
         video:
             ""
+
     },
 
 
     2: {
-        title: "경쟁사 상품·시장 모니터링 자동화",
+
+        title:
+            "경쟁사 상품·시장 모니터링 자동화",
 
         background:
             "경쟁사 자사몰에 매일 접속하여 당사와 유사한 상품과 신규 출시 상품을 확인하고, 상품 정보를 수작업으로 취합해야 하는 반복적인 시장조사 업무가 발생하고 있었습니다.",
@@ -84,11 +161,14 @@ const projectData = {
 
         video:
             ""
+
     },
 
 
     3: {
-        title: "대형마트 매출 데이터 분석 자동화",
+
+        title:
+            "대형마트 매출 데이터 분석 자동화",
 
         background:
             "대형마트에서 제공하는 판매 데이터를 기반으로 상품별 판매 실적을 분석하고, 재고 부족 및 장기재고를 지속적으로 관리해야 하는 업무가 발생하고 있었습니다.",
@@ -104,11 +184,14 @@ const projectData = {
 
         video:
             ""
+
     },
 
 
     4: {
-        title: "온실가스 배출량 산정 및 AI 보고서 자동화",
+
+        title:
+            "온실가스 배출량 산정 및 AI 보고서 자동화",
 
         background:
             "온실가스 배출량 산정을 위해 ERP와 외부 사이트에 분산된 여러 데이터를 수집하고, 이를 계산·정리하여 경영진 보고자료로 작성하는 과정이 필요했습니다.",
@@ -124,11 +207,14 @@ const projectData = {
 
         video:
             ""
+
     },
 
 
     5: {
-        title: "매입·매출 마감 및 회계 대사 자동화",
+
+        title:
+            "매입·매출 마감 및 회계 대사 자동화",
 
         background:
             "국내·외 매입 및 매출 과정에서 수주, 거래명세서, 세금계산서, 입금전표, 매출부가세, 가수금, 법인카드 등 다양한 마감 및 회계 처리 업무가 반복적으로 발생하고 있었습니다.",
@@ -144,11 +230,14 @@ const projectData = {
 
         video:
             ""
+
     },
 
 
     6: {
-        title: "IT 시스템 정기 점검 자동화",
+
+        title:
+            "IT 시스템 정기 점검 자동화",
 
         background:
             "ERP, 네트워크 및 보안 시스템을 대상으로 월·분기·연 단위의 정기 점검을 반복적으로 수행해야 하며, 점검 시기와 대상 시스템을 지속적으로 관리해야 했습니다.",
@@ -164,6 +253,7 @@ const projectData = {
 
         video:
             ""
+
     }
 
 };
@@ -175,6 +265,10 @@ const projectData = {
 // =========================
 
 function stopModalVideo() {
+
+    if (!modalVideo) {
+        return;
+    }
 
     modalVideo.pause();
 
@@ -206,37 +300,37 @@ projectCards.forEach(function (card) {
 
     card.addEventListener("click", function () {
 
-        const projectNumber = card.dataset.project;
+        const projectNumber =
+            card.dataset.project;
 
-        const data = projectData[projectNumber];
+        const data =
+            projectData[projectNumber];
 
-
-        // 등록되지 않은 프로젝트일 경우 종료
 
         if (!data) {
-
             return;
-
         }
 
 
-        // 프로젝트 번호
-        // 1 -> PROJECT 01
-        // 10 -> PROJECT 10
-
         modalNumber.textContent =
-            "PROJECT " + String(projectNumber).padStart(2, "0");
+            "PROJECT " +
+            String(projectNumber).padStart(2, "0");
 
 
-        modalTitle.textContent = data.title;
+        modalTitle.textContent =
+            data.title;
 
-        modalBackground.textContent = data.background;
+        modalBackground.textContent =
+            data.background;
 
-        modalApproach.textContent = data.approach;
+        modalApproach.textContent =
+            data.approach;
 
-        modalRole.textContent = data.role;
+        modalRole.textContent =
+            data.role;
 
-        modalResult.textContent = data.result;
+        modalResult.textContent =
+            data.result;
 
 
 
@@ -247,19 +341,29 @@ projectCards.forEach(function (card) {
         stopModalVideo();
 
 
-        if (data.video) {
+        if (
+            data.video &&
+            modalVideo &&
+            modalVideoSection
+        ) {
 
-            modalVideo.src = data.video;
+            modalVideo.src =
+                data.video;
 
-            modalVideoSection.style.display = "block";
+            modalVideoSection.style.display =
+                "block";
 
             modalVideo.load();
 
-        } else {
+        } else if (
+            modalVideo &&
+            modalVideoSection
+        ) {
 
             modalVideo.removeAttribute("src");
 
-            modalVideoSection.style.display = "none";
+            modalVideoSection.style.display =
+                "none";
 
             modalVideo.load();
 
@@ -271,16 +375,19 @@ projectCards.forEach(function (card) {
         // 팝업 표시
         // =========================
 
-        projectModal.style.display = "flex";
+        projectModal.style.display =
+            "flex";
 
 
-        // 밝기 변화 효과 다시 실행
-
-        projectModal.classList.remove("modal-fade-in");
+        projectModal.classList.remove(
+            "modal-fade-in"
+        );
 
         void projectModal.offsetWidth;
 
-        projectModal.classList.add("modal-fade-in");
+        projectModal.classList.add(
+            "modal-fade-in"
+        );
 
     });
 
@@ -292,19 +399,26 @@ projectCards.forEach(function (card) {
 // 영상 클릭 재생 / 일시정지
 // =========================
 
-modalVideo.addEventListener("click", function () {
+if (modalVideo) {
 
-    if (modalVideo.paused) {
+    modalVideo.addEventListener(
+        "click",
+        function () {
 
-        modalVideo.play();
+            if (modalVideo.paused) {
 
-    } else {
+                modalVideo.play();
 
-        modalVideo.pause();
+            } else {
 
-    }
+                modalVideo.pause();
 
-});
+            }
+
+        }
+    );
+
+}
 
 
 
@@ -312,11 +426,14 @@ modalVideo.addEventListener("click", function () {
 // X 버튼으로 팝업 닫기
 // =========================
 
-modalClose.addEventListener("click", function () {
+modalClose.addEventListener(
+    "click",
+    function () {
 
-    closeProjectModal();
+        closeProjectModal();
 
-});
+    }
+);
 
 
 
@@ -324,15 +441,18 @@ modalClose.addEventListener("click", function () {
 // 팝업 바깥 영역 클릭 시 닫기
 // =========================
 
-projectModal.addEventListener("click", function (event) {
+projectModal.addEventListener(
+    "click",
+    function (event) {
 
-    if (event.target === projectModal) {
+        if (event.target === projectModal) {
 
-        closeProjectModal();
+            closeProjectModal();
+
+        }
 
     }
-
-});
+);
 
 
 
@@ -340,18 +460,21 @@ projectModal.addEventListener("click", function (event) {
 // ESC 키로 팝업 닫기
 // =========================
 
-document.addEventListener("keydown", function (event) {
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-    if (
-        event.key === "Escape" &&
-        projectModal.style.display === "flex"
-    ) {
+        if (
+            event.key === "Escape" &&
+            projectModal.style.display === "flex"
+        ) {
 
-        closeProjectModal();
+            closeProjectModal();
+
+        }
 
     }
-
-});
+);
 
 
 
@@ -359,32 +482,39 @@ document.addEventListener("keydown", function (event) {
 // TOP 버튼
 // =========================
 
-const topButton = document.getElementById("top-button");
+const topButton =
+    document.getElementById("top-button");
 
 
-topButton.addEventListener("click", function () {
+topButton.addEventListener(
+    "click",
+    function () {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 500) {
-
-        topButton.classList.add("show");
-
-    } else {
-
-        topButton.classList.remove("show");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
+);
 
-});
+
+window.addEventListener(
+    "scroll",
+    function () {
+
+        if (window.scrollY > 500) {
+
+            topButton.classList.add("show");
+
+        } else {
+
+            topButton.classList.remove("show");
+
+        }
+
+    }
+);
 
 
 
@@ -392,28 +522,37 @@ window.addEventListener("scroll", function () {
 // 모바일 메뉴
 // =========================
 
-const menuButton = document.getElementById("menu-button");
+const menuButton =
+    document.getElementById("menu-button");
 
-const nav = document.getElementById("nav");
-
-
-menuButton.addEventListener("click", function () {
-
-    nav.classList.toggle("show");
-
-});
+const nav =
+    document.getElementById("nav");
 
 
-const navLinks = document.querySelectorAll(".nav a");
+menuButton.addEventListener(
+    "click",
+    function () {
+
+        nav.classList.toggle("show");
+
+    }
+);
+
+
+const navLinks =
+    document.querySelectorAll(".nav a");
 
 
 navLinks.forEach(function (link) {
 
-    link.addEventListener("click", function () {
+    link.addEventListener(
+        "click",
+        function () {
 
-        nav.classList.remove("show");
+            nav.classList.remove("show");
 
-    });
+        }
+    );
 
 });
 
@@ -423,41 +562,56 @@ navLinks.forEach(function (link) {
 // 이메일 주소 복사
 // =========================
 
-const emailLink = document.getElementById("email-link");
+const emailLink =
+    document.getElementById("email-link");
 
-emailLink.addEventListener("click", function (event) {
 
-    event.preventDefault();
+emailLink.addEventListener(
+    "click",
+    function (event) {
 
-    navigator.clipboard.writeText(
-        emailLink.textContent.trim()
-    );
+        event.preventDefault();
 
-    alert("이메일 주소가 복사되었습니다.");
+        navigator.clipboard.writeText(
+            emailLink.textContent.trim()
+        );
 
-});
+        alert(
+            "이메일 주소가 복사되었습니다."
+        );
+
+    }
+);
+
 
 
 // =========================
 // 연락처 복사
 // =========================
 
-const phoneLink = document.querySelector(
-    '.contact-links a[href^="tel:"]'
-);
+const phoneLink =
+    document.querySelector(
+        '.contact-links a[href^="tel:"]'
+    );
+
 
 if (phoneLink) {
 
-    phoneLink.addEventListener("click", function (event) {
+    phoneLink.addEventListener(
+        "click",
+        function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        navigator.clipboard.writeText(
-            phoneLink.textContent.trim()
-        );
+            navigator.clipboard.writeText(
+                phoneLink.textContent.trim()
+            );
 
-        alert("연락처가 복사되었습니다.");
+            alert(
+                "연락처가 복사되었습니다."
+            );
 
-    });
+        }
+    );
 
 }
