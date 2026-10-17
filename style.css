@@ -91,9 +91,9 @@ body {
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-columns: minmax(0, 1fr);
 
-    gap: 80px;
+    gap: 40px;
 
     align-items: center;
 }
@@ -133,31 +133,6 @@ body {
 .hero h1 span {
     display: block;
     white-space: nowrap;
-}
-
-
-/* 프로필 사진 */
-
-.hero-photo {
-    width: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-}
-
-.hero-photo img {
-    display: block;
-
-    width: 260px;
-    aspect-ratio: 3 / 4;
-
-    object-fit: cover;
-    object-position: center top;
-
-    border: 1px solid #d5d2cb;
-    border-radius: 12px;
-
-    filter: grayscale(10%);
 }
 
 
